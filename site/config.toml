@@ -3,6 +3,9 @@ languageCode = "en-us"
 languageLang = "en"
 title = "One Line Poetry"
 enableEmoji = true
+relativeURLs = true
+[outputs]
+  home = ["html","rss","json"]
 [taxonomies]
   tag = "tags"
 

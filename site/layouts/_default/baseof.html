@@ -6,16 +6,17 @@
     <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
     <title>{{ $.Site.Title }}</title>
     <link rel="stylesheet" href="https://use.typekit.net/bek8kga.css">
-    <link rel="stylesheet" href="css/style.css"/>
-  </head>
-  <body>
-
-    {{ block "header" . }}{{ partial "header" . }}{{end}}
+    <link rel="stylesheet" href="css/style.css"/> 
+  </head> 
+  <body {{ if eq .URL "/poetry/" }}class="archive"{{ end }}>
+  
+    {{ block "header" . }}{{ partial "header" . }}{{end}} 
 
     {{ block "main" . }}{{end}}
 
-    {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+    {{ block "footer" . }}{{ partial "footer" . }}{{end}} 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="app.js"></script>
 
   </body>

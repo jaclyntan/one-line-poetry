@@ -7,6 +7,6 @@ title = "But first, love"
 type = "poetry"
 
 +++
-<div class="wrapper" style="background-image:url('/images/tom-barrett-346220-unsplash.jpg');background-size:cover;height: 100vh; display:flex;align-items:center; justify-content:center;">
-<h3>But first, love</h3>
+<div class="wrapper" style="background-image:url('/images/tom-barrett-346220-unsplash.jpg');background-size:cover;height: 100vh; display:flex;align-items:center; justify-content:center;background-position:center;color:lightpink;font-size:6rem;">
+But first, <em>love</em>
 </div>

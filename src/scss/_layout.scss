@@ -1,9 +1,32 @@
 //Header
 .site-header {
-    padding: 0 20px;
+    display: flex;
+    align-items: top;
+    justify-content: space-between; 
+    padding:10px 20px;
 
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+}
+
+.right {
+    text-align: right;
+    margin: 15px 0;
+}
+
+//main content
+
+.archive {
+    background-color: $brand-primary; 
+    color: $brand-secondary;
+
+    a {
+        color: $brand-secondary;
+    }
+
+    main {
+        padding: 100px 20px;
+    }
 }

@@ -1,6 +1,7 @@
 ### TO DO
 
 - [ ] Add pagination
-- [ ] Add archive template
-- [ ] Prettify intro/header
+- [X] Add archive template
+- [ ] Prettify layout
 - [ ] Add about and contact pages
+- [ ] Make responsive

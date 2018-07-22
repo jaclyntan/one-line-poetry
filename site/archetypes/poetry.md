@@ -3,7 +3,7 @@ title: ""
 date: ""
 description: ""
 type: poetry
-layout: first
+layout: single
 tags:
 - minimal
 - black

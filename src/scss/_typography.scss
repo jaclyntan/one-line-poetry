@@ -4,23 +4,31 @@ input,
 select,
 textarea {
 	color: $brand-primary;
-	font-family: $brand-font; 
+	font-family: $brand-font;
 	@include font-size(1.6); // 1rem = 10px
-	line-height: 1.2;
-    letter-spacing: .02em;
+	line-height: 1.3;
 }
 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
 h1 {
     font-weight: 100;
     font-family: $brand-heading;
-    @include font-size(4);
-    margin-bottom: 0em;
-    line-height: .9;
+    @include font-size(3.2);
+    line-height: 1.2;
 }
 
 h2 {
-    @include font-size(1.8);
+    @include font-size(1.7);
     letter-spacing: .05em;
+    line-height: 1.2;
 }
 
 h3 {

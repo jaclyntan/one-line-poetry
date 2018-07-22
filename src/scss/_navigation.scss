@@ -1,0 +1,22 @@
+a {
+	color: $brand-primary;
+    text-decoration: none;
+    transition: .3s ease all;
+	&:visited {
+		color: $brand-primary;
+	}
+	&:hover,
+	&:active {
+		color: $brand-secondary;
+        text-decoration: none;
+        transition: .3s ease all;
+	}
+	&:focus { 
+		outline: thin dotted;
+        text-decoration: none;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
