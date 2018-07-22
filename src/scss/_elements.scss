@@ -1,0 +1,43 @@
+html {
+	box-sizing: border-box; 
+    font-size:62.5%;  
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background-color: $brand-secondary;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    height: 100vh;
+} 
+
+blockquote, q {
+	quotes: "" ""; 
+    margin: 20px 0 20px 50px;
+
+	&:before,
+	&:after {
+		content: "";
+	}
+}
+
+hr {
+	background-color: $brand-grey;
+	border: 0;
+	height: 1px;
+	margin: 30px 0; 
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+
+

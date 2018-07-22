@@ -1,0 +1,28 @@
+body,
+button,
+input,
+select,
+textarea {
+	color: $brand-primary;
+	font-family: $brand-font; 
+	@include font-size(1.6); // 1rem = 10px
+	line-height: 1.2;
+    letter-spacing: .02em;
+}
+
+h1 {
+    font-weight: 100;
+    font-family: $brand-heading;
+    @include font-size(4);
+    margin-bottom: 0em;
+    line-height: .9;
+}
+
+h2 {
+    @include font-size(1.8);
+    letter-spacing: .05em;
+}
+
+h3 {
+    @include font-size(2.4);
+}

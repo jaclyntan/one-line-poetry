@@ -1,9 +1,7 @@
 {{ define "main" }}
-
-<h1>Hugo with Gulp, PostCSS and Webpack</h1>
-
-<p>
-  Hooray 🎉 - you've built this with <a href="https://github.com/netlify/victor-hugo">Victor-Hugo</a>!
-</p>
-
+    <section class="postShorten-group main-content-wrap">
+        {{ range first 1 (where .Data.Pages "Type" "poetry") }}
+            {{ .Content }}
+        {{ end }}
+    </section>
 {{end}}
