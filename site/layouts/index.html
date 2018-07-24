@@ -1,7 +1,7 @@
 {{ define "main" }}
     <section class="postShorten-group main-content-wrap">
         {{ range first 1 (where .Data.Pages "Type" "poetry") }}
-            {{ .Content }}   
+            {{ .Content }}
         {{ end }}
     </section>
 {{end}}
