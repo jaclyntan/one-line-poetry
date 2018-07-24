@@ -7,6 +7,9 @@
     <title>{{ $.Site.Title }}</title>
     <link rel="stylesheet" href="https://use.typekit.net/bek8kga.css">
     <link rel="stylesheet" href="css/style.css"/> 
+
+    <link rel="stylesheet" href="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.css" />  
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head> 
   <body {{ if eq .URL "/poetry/" }}class="archive"{{ end }}>
   
@@ -18,6 +21,17 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="app.js"></script>
-
+    <script src="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
