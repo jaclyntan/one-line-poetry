@@ -21,7 +21,7 @@
     {{ block "footer" . }}{{ partial "footer" . }}{{end}} 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="app.js"></script>
+    
     {{ if eq .URL "/admin/" }}
       <script src="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.js"></script>
       <script>
@@ -36,5 +36,7 @@
         }
       </script>
     {{ end }}
+
+    <script src="app.js"></script>
   </body>
 </html>

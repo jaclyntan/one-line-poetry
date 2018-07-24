@@ -10,18 +10,17 @@
      
      "items": [ {{ range $index, $item := .Data.Pages }}{{if $index}}, {{end}}
         {
-         "url": "{{ .Permalink }}",
-         "title": "{{ .Title }}",
-         "url": "{{ if isset .Params "redirect" }}{{ .Params.redirect }}{{ else }}{{ .Permalink }}{{ end }}",
-         "section" : "{{ $.Section }}",
-         "content_html": "{{ replace .Content "\n" "\\n" | replaceRE "\"" "\\\"" | replaceRE "\t" "\\t"}}{{ if isset .Params "redirect" }}<p><a href=\"{{ .Permalink }}\">Read on site</a></p>{{ end }}",
-         "summary": "{{ replace .Summary "\n" "\\n" | replaceRE "\"" "\\\"" }}",
-         {{ range $taxonomy := .Params.categories }}"banner_image": "https://ig.nore.me/img/categories/category-{{ $taxonomy | urlize }}-full.jpg",{{ end }}
-         {{ if isset .Params "ogimage" }}"image": "{{ .Params.ogimage }}",{{ end }}
+          "url": "{{ .Permalink }}",
+          "page": "{{ .Kind }}"
+          "title": "{{ .Title }}",
+          "url": "{{ if isset .Params "redirect" }}{{ .Params.redirect }}{{ else }}{{ .Permalink }}{{ end }}",
          "date_published": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
          "date_modified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
-         "taxonomy" : "{{ $.Data.Singular }}",
-        "term" : "{{ $.Data.Term }}",
+         "content_html": "{{ replace .Content "\n" "\\n" | replaceRE "\"" "\\\"" | replaceRE "\t" "\\t"}}",
+         "summary": "{{ replace .Summary "\n" "\\n" | replaceRE "\"" "\\\"" }}",
+         "tags": [{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}"{{ $e }}"{{ end }}],
+         "keywords": [{{ range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}"{{ $e }}"{{ end }}],
+        "thumb": "{{ .Params.thumbnail }}"
        }{{ end }}
      ]
   }
