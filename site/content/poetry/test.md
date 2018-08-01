@@ -10,23 +10,24 @@ keywords:
   - seo
   - omg
   - ''
-description: |-
-  > testing
-
-
-
-  * serser
-  * ser
-  * esrse
-  * rsre
-  * r
-
-  1. asdsad
-  2. a
-  3. ds
-  4. asd
-  5. asd
-
-  ![seapyramid](/images/uploads/seapyramid-logo.png)
+theme: light
+js: /images/uploads/seapyramid-logo.png
+css: test
+typekit: test
+description: '> a  description lives here'
 ---
-_Code is poetry apparently._
+testing
+
+* serser
+* ser
+* esrse
+* rsre
+* r
+
+1. asdsad
+2. a
+3. ds
+4. asd
+5. asd
+
+![seapyramid](/images/uploads/seapyramid-logo.png)
