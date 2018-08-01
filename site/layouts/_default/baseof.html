@@ -26,9 +26,20 @@
     {{ block "footer" . }}{{ partial "footer" . }}{{end}} 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    {{ if isset .Params "js" }}
-    {{ range .Params.js }}
-        <script src="{{ . }}"></script>
+
+    {{ if .IsHome }}
+      {{ range first 1 (where .Data.Pages "Type" "poetry") }}
+        {{ if isset .Params "js" }}
+        {{ range .Params.js }}
+            <script src="{{ . }}"></script>
+            {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ else }}  
+      {{ if isset .Params "js" }}
+        {{ range .Params.js }}
+            <script src="{{ . }}"></script>
+            {{ end }}
         {{ end }}
     {{ end }}
 
@@ -48,5 +59,6 @@
     {{ end }}
 
     <script src="app.js"></script>
+    
   </body>
 </html>
