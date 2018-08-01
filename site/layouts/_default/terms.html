@@ -1,0 +1,16 @@
+{{ define "main" }}
+<main>
+    <article class="tags">   
+        <header>
+            <h1>{{.Title}}</h1>
+        </header>
+        <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
+        {{.Content}}
+        <ul class="all-tags">
+            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                <li><a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a></li>
+            {{ end }}
+        </ul>
+    </article>
+</main>
+{{ end }}

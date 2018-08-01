@@ -11,11 +11,31 @@
         </div>
     </div>
 
+    {{ if and (  (.IsPage)  (not eq .URL "/poetry/")) }}
+    <div class="center">
+        <ul class="post-tags">
+            {{ range .Params.tags }}
+                <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" title="{{ . }}">{{ . }}</a> </li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ else if (.IsHome) }}
+        <div class="center">
+            <ul class="post-tags">
+                {{ range first 1 (where .Data.Pages "Type" "poetry") }}
+                    {{ range .Params.tags }}
+                        <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" title="{{ . }}">{{ . }}</a> </li>
+                    {{ end }}
+                {{ end }}
+            </ul>
+        </div>
+    {{ end }}
+
     <div class="right">
         {{ if (.IsHome) }} 
             {{ range first 1 (where .Data.Pages "Type" "poetry") }}
-                <h2>{{ .Title }}</h2>
-                {{ .PublishDate.Format "January 2, 2006 ; 15:04:05 -0700" }}
+                <div class="poetry-title">{{ .Title }}</div>
+                {{ .PublishDate.Format "January 2, 2006 @ 03:04PM -0700" }}
             {{ end }}
 
         {{ else if and (  (.IsPage)  (not eq .URL "/poetry/")) }}
@@ -29,3 +49,4 @@
     </div>
 
 </header>
+<div class="more-tab"></div>

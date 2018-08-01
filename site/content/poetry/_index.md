@@ -1,11 +1,10 @@
 +++
 date = "2018-07-22T22:12:35+08:00"
-description = ""
+description = "Browse the archives"
 layout = "archives" 
-tags = ["minimal","black","white"]
-title = ""
+title = "Archives" 
 type = "poetry"
-
+theme = "light"
 +++
 
-Browse the archives here.
+<h2>Browse at your leisure or <a href="#" id="random">have a gander</a></h2>

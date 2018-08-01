@@ -2,13 +2,14 @@
 date = "2018-07-22T04:02:18+08:00"
 description = "But first, love"
 layout = "single"
-tags = ["minimal","black","white"]
+tags = ["black","white","pink","blend","animation"]
 title = "But first, love"
 type = "poetry"
-keywords =["first","pink"]
-thumbnail = "test.jpg"
-
+keywords =["first","love","heartsplosion","emotions","relationships"]
+thumbnail = "/images/uploads/clouds.jpg"
+theme = "dark"
 +++
-<div class="wrapper" style="background-image:url('/images/tom-barrett-346220-unsplash.jpg');background-size:cover;height: 100vh; display:flex;align-items:center; justify-content:center;background-position:center;color:lightpink;font-size:6rem;">
-But first, <em>love</em>
-</div>
+
+<div id="poetry-first" class="wrapper">
+<span style="mix-blend-mode:overlay">But first,</span> <em style="font-size:12rem;font-family:Georgia; mix-blend-mode:multiply;margin-left:10px;">love</em>
+</div> 

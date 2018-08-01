@@ -17,5 +17,9 @@ collections:
       - {label: "Thumbnail Image", name: "thumbnail", widget: "image"}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Meta Keywords", name: "keywords", widget: "list"}
+      - {label: "Light/Dark Theme?", name: "theme", widget: "select", options: ["light", "dark"]}
+      - {label: "Custom JS", name: "js", widget: "file"}
+      - {label: "Custom CSS", name: "css", widget: "text"}
+      - {label: "Typekit", name: "typekit", widget: "string"}
       - {label: "Description", name: "description", widget: "markdown"}
       - {label: "Body", name: "body", widget: "markdown"}

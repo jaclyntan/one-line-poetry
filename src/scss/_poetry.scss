@@ -1,0 +1,60 @@
+//first
+#poetry-first {
+    background-image: url('/images/uploads/clouds.jpg');
+    background-repeat: repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    color: pink;
+    font-size: 3.5rem;
+    text-transform: none;
+    animation: move 150s linear infinite;
+    @keyframes move {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            background-position: -2000px 0;
+        }
+    }
+    @include media("<=tablet") {
+        display: flex;
+        flex-direction: column;
+        @include font-size(1.6);
+    }
+}
+
+#poetry-empty {
+    background-color: #c8cddd;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/images/uploads/emptyspace.jpg');
+    background-repeat: no-repeat;
+    background-size: auto 90%;
+    background-position: center;
+    #particles-js {
+        width: 100%;
+        height: 130%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 0;
+    }
+    .text {
+        margin-bottom:21%; 
+        text-align:center;
+        font-family: $brand-heading;
+        @include font-size(3);
+        text-transform: none;
+        letter-spacing: 0.02em;
+        color: #332a28;
+        width: 350px;
+        line-height: 1.2;
+        // opacity: 0.7;
+        mix-blend-mode: difference;
+    }
+}

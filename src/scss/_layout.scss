@@ -1,32 +1,126 @@
 //Header
 .site-header {
     display: flex;
-    align-items: top;
+    align-items: flex-end;
     justify-content: space-between; 
     padding:10px 20px;
-
+    z-index: 1000;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
+
+    opacity: 1;
+    visibility: visible;
+    transition: .8s ease all;
+
+    &.hover {
+        opacity: 0;
+        visibility: hidden;
+        transition: .8s ease all;
+    }
 }
 
+.left {
+    padding-bottom: 10px; 
+}
 .right {
     text-align: right;
     margin: 15px 0;
 }
 
-//main content
+.center {
+    padding: 0 30px;
+}
+.post-tags,
+.all-tags { 
+    list-style: none; 
+    margin: 0;
+    padding: 10px;
+    opacity: .8;
 
+    li {
+        display: inline-block;
+        margin: 0 3px; 
+        font-size: 80%; 
+    }
+}
+.more-tab {
+    background-color: $brand-secondary;
+    border: 1px solid $brand-primary;
+    border-radius: 6px 6px 0 0;
+    width: 50px;
+    height: 15px;
+    
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom:-1px;
+
+    transform: translateY(60px);
+    transition: 1s linear all;
+
+    &:after {
+        content: "";
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: 50%;
+        width: 50%;
+        border-top: 1px solid $brand-primary;
+    }
+
+    &.show {
+        transform: translateY(0px);
+        transition: 1s linear all;
+        transition-delay:.3s;
+        
+    }
+}
+//main content
+.poetry-page {
+    display: block;
+    width: 100%;
+}
+//archive
 .archive {
     background-color: $brand-primary; 
     color: $brand-secondary;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     a {
         color: $brand-secondary;
     }
 
     main {
-        padding: 100px 20px;
+        padding: 30px 20px; 
+    }
+    article {
+        h1 {
+            text-align: center; 
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 3em;
+        }
+    } 
+}
+
+.thumb {
+    display: none;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+
+    &.show {
+        display: block;
     }
 }

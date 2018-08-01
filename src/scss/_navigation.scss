@@ -1,15 +1,37 @@
 a {
 	color: $brand-primary;
     text-decoration: none;
-    transition: .3s ease all;
+	transition: .3s ease all;
+	position: relative;
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 0px;
+		left: 0;
+		background-color:$brand-primary;
+		height: 1px;
+		width: 100%;
+	}
+
 	&:visited {
 		color: $brand-primary;
 	}
 	&:hover,
 	&:active {
-		color: $brand-secondary;
+		color: rgb(117, 110, 117);
         text-decoration: none;
-        transition: .3s ease all;
+		transition: .3s ease all;
+		
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 0px;
+			left: 0;
+			background: linear-gradient(to right, rgb(240, 149, 149),rgb(247, 188, 133),rgb(255, 255, 179),rgb(179, 255, 204),rgb(153, 214, 255),rgb(194, 153, 255),rgb(179, 179, 255),rgb(240, 149, 149));
+			animation: wave 3s linear infinite;
+			height: 1px;
+			width: 100%;
+		}
 	}
 	&:focus { 
 		outline: thin dotted;
@@ -19,4 +41,22 @@ a {
 	&:active {
 		outline: 0;
 	}
+
+	// .dark & {
+	// 	&:after {
+	// 		background-color: $brand-secondary;
+	// 	}
+	// }
+
+	.light & {
+		color: $brand-secondary;
+		&:after {
+			background-color: $brand-secondary;
+		}
+	}
+}
+
+@keyframes wave {
+	0%{background-position:0;}
+	100%{background-position:200px 0;}
 }

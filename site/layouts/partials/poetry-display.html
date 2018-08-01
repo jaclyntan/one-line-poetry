@@ -1,0 +1,7 @@
+{{ if isset .Params "typekit" }}
+    <link rel="stylesheet" href="{{ index .Params "typekit" }}">
+{{ end }}
+{{ if isset .Params "css" }}
+    <link rel="stylesheet" href="{{ index .Params "css" }}">
+{{ end }}
+{{ .Content }}

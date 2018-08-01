@@ -20,7 +20,10 @@
           "summary": "{{ replace .Summary "\n" "\\n" | replaceRE "\"" "\\\"" }}",
           "tags": [{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}"{{ $e }}"{{ end }}],
           "keywords": [{{ range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}"{{ $e }}"{{ end }}],
-          "thumb": "{{ .Params.thumbnail }}"
+          "thumb": "{{ .Params.thumbnail }}",
+          "theme": "{{ .Params.theme }}",
+          "js": "{{ .Params.js }}",
+          "typekit": "{{ .Params.typekit }}"
        }{{ end }}
      ]
   }

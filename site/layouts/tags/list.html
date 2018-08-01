@@ -1,0 +1,11 @@
+{{ define "main" }}
+<main>
+    <article class="tags">
+        <header>
+            <h1>Tag: {{.Title}}</h1>
+        </header>
+        {{.Content}}
+        {{ partial "archive-list" . }}
+    </article>
+</main>
+{{ end }}

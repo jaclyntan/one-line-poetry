@@ -5,8 +5,11 @@ select,
 textarea {
 	color: $brand-primary;
 	font-family: $brand-font;
-	@include font-size(1.6); // 1rem = 10px
-	line-height: 1.3;
+	@include font-size(1.2); // 1rem = 10px
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-family: $brand-font; 
 }
 
 
@@ -17,18 +20,24 @@ h4,
 h5,
 h6 {
     margin: 0;
+
+    .light & {
+        color: $brand-secondary;
+    }
 }
 h1 {
-    font-weight: 100;
     font-family: $brand-heading;
-    @include font-size(3.2);
+    @include font-size(3);
     line-height: 1.2;
+    letter-spacing: .02em;
+    font-family: $brand-heading;
+    text-transform: none;
 }
 
 h2 {
-    @include font-size(1.7);
-    letter-spacing: .05em;
+    @include font-size(1.3);
     line-height: 1.2;
+    margin: .3em 0;
 }
 
 h3 {
