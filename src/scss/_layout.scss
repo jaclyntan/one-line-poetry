@@ -1,66 +1,148 @@
 //Header
 .site-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between; 
-    padding:10px 20px;
     z-index: 1000;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-
     opacity: 1;
     visibility: visible;
     transition: .8s ease all;
-
-    &.hover {
-        opacity: 0;
-        visibility: hidden;
+    overflow: hidden;
+    @include media("<=menu") {
+        height: 0;
+        overflow: visible;
+    }
+    &.mob-show {
+        height: 100%;
         transition: .8s ease all;
+    }
+}
+.header-wrapper {
+    opacity: 0;
+    visibility: hidden;
+    transition: .8s ease all;
+
+    @include media("<=menu") {
+        opacity: 1;
+        visibility: visible;
+        transition: .8s ease all;
+        height: 100%;
+        background-color: $brand-primary;
+        color: $brand-secondary;
+        transform: translateY(0);
+        transition: .5s ease all;
+        overflow: hidden;
+
+        display: flex;
+        align-items:center;
+        justify-content: center;
+    }
+    @include media("height<=600px") { 
+        overflow: auto;
+    }
+    &.hover {
+        opacity: 1;
+        visibility:visible;
+        transition:.8s ease all;
+    }
+    &.show {
+        opacity: 1;
+        visibility:visible;
+        transition:.8s ease all;
+    }
+    .inner-wrapper {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 20px;
+    
+        @include media("<=menu") {
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+    
+            a {
+                color: $brand-secondary; 
+            }
+        }
     }
 }
 
 .left {
     padding-bottom: 10px; 
+    width: 33%;
+    @include media("<=menu") {
+        width: 80%;
+        margin: 100px auto 50px;
+        padding: 0;
+    }
 }
 .right {
     text-align: right;
-    margin: 15px 0;
+    margin: 10px 0;
+    width: 33%;
+    @include media("<=menu") {
+        width: 80%;
+        margin: 50px auto;
+        padding: 0;
+        text-align:center;
+    }
 }
 
 .center {
     padding: 0 30px;
+    @include media("<=menu") {
+        width: 80%;
+        margin: 50px auto;
+        padding: 0;
+    }
 }
 .post-tags,
 .all-tags { 
     list-style: none; 
     margin: 0;
     padding: 10px;
-    opacity: .8;
-
+    text-align:center;
+    opacity: .4;
     li {
         display: inline-block;
-        margin: 0 3px; 
-        font-size: 80%; 
-    }
+        margin: 0 2px; 
+        font-size: 90%;
+    } 
 }
 .more-tab {
     background-color: $brand-secondary;
-    border: 1px solid $brand-primary;
+    border-top: 1px solid $brand-primary;
+    border-left: 1px solid $brand-primary;
+    border-right: 1px solid $brand-primary;
     border-radius: 6px 6px 0 0;
     width: 50px;
     height: 15px;
     
-    position: fixed;
+    position: absolute;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
-    bottom:-1px;
+    bottom:0;
+    z-index: 100;
 
     transform: translateY(60px);
-    transition: 1s linear all;
+    transition: .7s linear all;
+
+    &.show {
+        transform: translateY(0px);
+        transition: .7s linear all;
+    }
+
+    @include media("<=menu") {
+        transform: translateY(0px);
+        top: -15px;
+        bottom: auto;
+        transition: .5s linear height;
+    }
 
     &:after {
         content: "";
@@ -74,11 +156,22 @@
         border-top: 1px solid $brand-primary;
     }
 
-    &.show {
-        transform: translateY(0px);
-        transition: 1s linear all;
-        transition-delay:.3s;
-        
+    &:hover {
+        cursor: pointer;
+        background-color: $brand-primary;
+        border-color: $brand-secondary;
+        &:after {
+            border-color: $brand-secondary;
+        }
+    }
+
+    .mob-show & {
+        transform: translateY(0);
+        top: -1px;
+        bottom: auto;
+        border-radius: 0 0 6px 6px;
+        transition: .5s linear height;
+        border-bottom: 1px solid $brand-secondary;
     }
 }
 //main content
@@ -93,7 +186,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: calc(100vh - 60px);
     a {
         color: $brand-secondary;
     }
@@ -123,4 +216,20 @@
     &.show {
         display: block;
     }
+}
+
+//page 
+.page-content {
+    max-width: 1000px;
+    margin: 50px auto;
+
+    header {
+        text-align: center;
+    }
+    padding: 30px 20px; 
+    font-family: $brand-heading;
+    text-transform: none;
+    letter-spacing: 0;
+    @include font-size(2.2);
+
 }

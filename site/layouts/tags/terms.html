@@ -1,0 +1,17 @@
+{{ define "main" }}
+<main>
+    <article class="tags">
+        <header>
+            <h1>{{.Title}}</h1>
+        </header>
+        {{.Content}}
+        <ul class="archive-list">
+            {{ range .Pages }}
+            <li class="single">
+                <a href="{{.Permalink}}">{{.Title}}</a>
+            </li>
+            {{ end }}
+        </ul>   
+    </article>
+</main>
+{{ end }}

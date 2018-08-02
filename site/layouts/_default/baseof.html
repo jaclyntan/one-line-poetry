@@ -17,7 +17,7 @@
       <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     {{ end }}
   </head> 
-  <body class="{{ if or (eq .URL "/poetry/") (eq .URL "/tags/") (eq .Section "tags" )}}archive {{ end }}{{ if isset .Params "theme" }}{{ index .Params "theme" }}{{end}}">
+  <body class="{{ if or (eq .URL "/poetry/") (eq .URL "/tags/") (eq .Section "tags" )}}archive {{ end }} {{ if isset .Params "theme" }}{{ if eq .Type "page" }}page{{end}} {{ index .Params "theme" }}{{end}}">
   
     {{ block "header" . }}{{ partial "header" . }}{{end}} 
 
@@ -28,17 +28,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     {{ if .IsHome }}
-      {{ range first 1 (where .Data.Pages "Type" "poetry") }}
+      {{ with (index (where .Data.Pages "Type" "poetry") 0) }}
         {{ if isset .Params "js" }}
         {{ range .Params.js }}
-            <script src="{{ . }}"></script>
+            <script src="{{ .  | safeJS }}"></script>
             {{ end }}
         {{ end }}
       {{ end }}
     {{ else }}  
       {{ if isset .Params "js" }}
         {{ range .Params.js }}
-            <script src="{{ . }}"></script>
+            <script src="{{ .  | safeJS }}"></script>
             {{ end }}
         {{ end }}
     {{ end }}

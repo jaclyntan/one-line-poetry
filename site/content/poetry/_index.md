@@ -3,7 +3,7 @@ date = "2018-07-22T22:12:35+08:00"
 description = "Browse the archives"
 layout = "archives" 
 title = "Archives" 
-type = "poetry"
+type = "page"
 theme = "light"
 +++
 

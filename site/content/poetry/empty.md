@@ -8,6 +8,7 @@ type = "poetry"
 keywords =["girl","heart","Radiohead","Lotus Flower"] 
 thumbnail = "images/uploads/emptyspace.jpg"
 theme = "dark" 
+typekit="https://use.typekit.net/vel2ktf.css"
 js = ["/js/particles.min.js","/js/poetry.js"]
 +++
 

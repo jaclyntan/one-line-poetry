@@ -1,52 +1,54 @@
 <header id="masthead" class="site-header">
-    <div class="left">
-        <div class="site-branding">
-            <a href="/">
-                <h1>one line poetry</h1>
-            </a>
-        </div>
+    <div class="header-wrapper show">
+        <div class="inner-wrapper">
+        <div class="left">
+                <div class="site-branding">
+                    <a href="/">
+                        <h1>one line poetry</h1>
+                    </a>
+                </div>
+                
+                <div class="site-meta">
+                    <h2>words with feelings</h2>
+                </div>
+            </div>
         
-        <div class="site-meta">
-            <h2>words with feelings</h2>
-        </div>
-    </div>
-
-    {{ if and (  (.IsPage)  (not eq .URL "/poetry/")) }}
-    <div class="center">
-        <ul class="post-tags">
-            {{ range .Params.tags }}
-                <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" title="{{ . }}">{{ . }}</a> </li>
-            {{ end }}
-        </ul>
-    </div>
-    {{ else if (.IsHome) }}
-        <div class="center">
-            <ul class="post-tags">
-                {{ range first 1 (where .Data.Pages "Type" "poetry") }}
+            {{ if and (  (.IsPage)  (not eq .URL "/poetry/")) }}
+            <div class="center">
+                <ul class="post-tags">
                     {{ range .Params.tags }}
                         <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" title="{{ . }}">{{ . }}</a> </li>
                     {{ end }}
-                {{ end }}
-            </ul>
-        </div>
-    {{ end }}
-
-    <div class="right">
-        {{ if (.IsHome) }} 
-            {{ range first 1 (where .Data.Pages "Type" "poetry") }}
-                <div class="poetry-title">{{ .Title }}</div>
-                {{ .PublishDate.Format "January 2, 2006 @ 03:04PM -0700" }}
+                </ul>
+            </div>
+            {{ else if (.IsHome) }}
+                <div class="center">
+                    <ul class="post-tags">
+                        {{ with (index (where .Data.Pages "Type" "poetry") 0) }}
+                            {{ range .Params.tags }}
+                                <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" title="{{ . }}">{{ . }}</a></li>
+                            {{ end }}
+                        {{ end }}
+                    </ul>
+                </div>
             {{ end }}
-
-        {{ else if and (  (.IsPage)  (not eq .URL "/poetry/")) }}
-            <h2>{{ .Title }}</h2>
-            {{ .PublishDate.Format "January 2, 2006 ; 15:04:05 -0700" }}
-
-        {{ else if eq .URL "/poetry/" }}
-        {{ end }}
-        <br>
-        {{ partial "nav" . }}
+        
+            <div class="right">
+                {{ if (.IsHome) }} 
+                    {{ with (index (where .Data.Pages "Type" "poetry") 0) }}
+                        <div class="poetry-title">{{ .Title }}</div>
+                        <div class="post-date">{{ .PublishDate.Format "January 2, 2006 @ 03:04PM -0700" }}</div>
+                    {{ end }}
+        
+                {{ else if and ( ( eq .Type "poetry") (not .Type "page")) }}
+                    <div class="poetry-title">{{ .Title }}</div>
+                    <div class="post-date">{{ .PublishDate.Format "January 2, 2006 @ 03:04PM -0700" }}</div>
+        
+                {{ else if eq .URL "/poetry/" }}
+                {{ end }}
+                {{ partial "nav" . }}
+            </div>
+        </div>
     </div>
-
+    <div class="more-tab"></div>
 </header>
-<div class="more-tab"></div>

@@ -7,11 +7,23 @@
      "author": {
        "name": "{{ .Site.Author.name }}"
      },
-     
-     "items": [ {{ range $index, $item := .Data.Pages }}{{if $index}}, {{end}}
+     "pages": [ {{ range $index, $item := (where .Data.Pages "Type" "page")  }}{{if $index}}, {{end}}
+      {
+        "url": "{{ .Permalink }}",
+        "type": "{{ .Type }}",
+        "title": "{{ .Title }}",
+        "url": "{{ if isset .Params "redirect" }}{{ .Params.redirect }}{{ else }}{{ .Permalink }}{{ end }}",
+        "date_published": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+        "date_modified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+        "content_html": "{{ replace .Content "\n" "\\n" | replaceRE "\"" "\\\"" | replaceRE "\t" "\\t"}}",
+        "summary": "{{ replace .Summary "\n" "\\n" | replaceRE "\"" "\\\"" }}",
+        "tags": [{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}"{{ $e }}"{{ end }}],
+        "keywords": [{{ range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}"{{ $e }}"{{ end }}]
+     }{{ end }}],
+     "poetry": [ {{ range $index, $item := (where .Data.Pages "Type" "poetry")  }}{{if $index}}, {{end}}
         {
           "url": "{{ .Permalink }}",
-          "page": "{{ .Kind }}",
+          "type": "{{ .Type }}",
           "title": "{{ .Title }}",
           "url": "{{ if isset .Params "redirect" }}{{ .Params.redirect }}{{ else }}{{ .Permalink }}{{ end }}",
           "date_published": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
