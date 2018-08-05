@@ -6,7 +6,7 @@ import plumber from "gulp-plumber";
 import flatten from "gulp-flatten";
 import autoprefixer from "autoprefixer";
 import sass from "gulp-sass";
-import postcss from "gulp-postcss";
+// import postcss from "gulp-postcss";
 import cssNano from "gulp-cssnano";
 // import cssImport from "postcss-import";
 // import cssnext from "postcss-cssnext";
@@ -53,8 +53,8 @@ gulp.task("css", () => (
       precision: 10,
       // includePaths: ["node_modules"],
     }))
-    .pipe(postcss([ autoprefixer() ]))
-    .pipe(cssNano())
+    // .pipe(postcss([ autoprefixer() ]))
+    .pipe(cssNano([ autoprefixer() ]))
     .pipe(gulp.dest("./dist/css"))
     .pipe(browserSync.stream())
 ));

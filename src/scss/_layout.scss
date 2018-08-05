@@ -233,11 +233,19 @@
     h2 {
         margin: 5em 0 .5em;
         text-align: center;
+
+        @include media("<=tablet") {
+            margin: 3em 0 .5em;
+        }
     }
     padding: 30px 20px; 
     font-family: $brand-heading;
     text-transform: none;
     letter-spacing: 0;
-    @include font-size(2.6);
+    @include font-size(2.6); 
+
+    @include media("<=tablet") {
+        @include font-size(2.2);
+    }
 
 }

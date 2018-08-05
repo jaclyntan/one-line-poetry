@@ -12,7 +12,7 @@
     text-transform: none;
     animation: move 50s linear infinite;
     will-change: background-position;
-    mix-blend-mode: overlay;
+    // mix-blend-mode: overlay;
     @keyframes move {
         from {
             background-position: 0 0;
