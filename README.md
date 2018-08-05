@@ -1,6 +1,1 @@
-### TO DO
-
-- [X] Add archive template
-- [X] Prettify layout
-- [ ] Add about and contact pages
-- [ ] Make responsive
+_All I want is the moon on a stick_

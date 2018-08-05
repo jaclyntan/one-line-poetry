@@ -6,6 +6,7 @@
     <meta name="keywords" content="poetry,digital,design,graphic design,type,art,illustration,lettering,perth designer, {{ delimit .Keywords ", " }}">
     <meta name="author" content="Jaclyn Tan">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="google-site-verification" content="XlZNpr71HOt5haO30K1pDwIF5d3FdInuTyFF1Flvv4o" />
 
     <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
     <title>{{ $.Site.Title }}</title>
@@ -42,7 +43,9 @@
             {{ end }}
         {{ end }}
     {{ end }}
+            <script src="js/app.js"></script>
 
+            
     {{ if eq .URL "/admin/" }}
       <script src="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.js"></script>
       <script>
@@ -57,8 +60,6 @@
         }
       </script>
     {{ end }}
-
-    <script src="app.js"></script>
     
   </body>
 </html>

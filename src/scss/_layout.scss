@@ -1,7 +1,7 @@
 //Header
 .site-header {
     z-index: 1000;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -69,9 +69,12 @@
         }
     }
 }
-
+.site-branding {
+    @include media("<=tablet") {
+        margin: 1.5em 0;
+    }
+}
 .left {
-    padding-bottom: 10px; 
     width: 33%;
     @include media("<=menu") {
         width: 80%;
@@ -84,7 +87,7 @@
     margin: 10px 0;
     width: 33%;
     @include media("<=menu") {
-        width: 80%;
+        width: 100%;
         margin: 50px auto;
         padding: 0;
         text-align:center;
@@ -221,15 +224,20 @@
 //page 
 .page-content {
     max-width: 1000px;
-    margin: 50px auto;
+    margin: 50px auto; 
+    // text-align: center;
 
-    header {
+    // header {
+    //     text-align: center;
+    // }
+    h2 {
+        margin: 5em 0 .5em;
         text-align: center;
     }
     padding: 30px 20px; 
     font-family: $brand-heading;
     text-transform: none;
     letter-spacing: 0;
-    @include font-size(2.2);
+    @include font-size(2.6);
 
 }

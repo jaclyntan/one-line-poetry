@@ -7,11 +7,12 @@
     align-items: center;
     justify-content: center;
     background-position: center;
-    color: pink;
+    color: black;
     font-size: 3.5rem;
     text-transform: none;
     animation: move 50s linear infinite;
     will-change: background-position;
+    mix-blend-mode: overlay;
     @keyframes move {
         from {
             background-position: 0 0;
@@ -46,7 +47,7 @@
         top: 0;
     }
     .text {
-        margin-bottom:12%; 
+        margin-bottom:16%; 
         text-align:center;
         font-family: $brand-heading;
         @include font-size(6.2);

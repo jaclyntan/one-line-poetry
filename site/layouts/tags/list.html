@@ -2,7 +2,7 @@
 <main>
     <article class="tags">
         <header>
-            <h1>Tag: {{.Title}}</h1>
+            <h1><a href="/tags" title="Tags">Tag:</a> {{.Title}}</h1>
         </header>
         {{.Content}}
         {{ partial "archive-list" . }}

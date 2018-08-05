@@ -26,11 +26,12 @@ export default {
 
   context: path.join(__dirname, "src"),
   entry: {
-    app: ["./js/app"]
+    app: ["./js/app"],
+    empty: ["./js/empty"]
   },
   output: {
-    path: path.join(__dirname, "dist"),
-    publicPath: "/",
+    path: path.join(__dirname, "dist/js"),
+    publicPath: "/js",
     filename: "[name].js"
   },
   externals:  [/^vendor\/.+\.js$/]
