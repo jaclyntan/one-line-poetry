@@ -1,9 +1,9 @@
 <ul class="archive-list">
     {{ range .Pages }}
     <li class="single">
-        <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} // {{.Title}}</a>
+        <a href="{{.Permalink}}">{{.Date.Format "2006-02-01"}} // {{.Title}}</a>
         {{ if .Params.thumbnail }}
         <img src="{{ .Params.thumbnail }}" width="300" class="thumb"> {{ end }}
     </li>
     {{ end }}
-</ul>  
+</ul>   

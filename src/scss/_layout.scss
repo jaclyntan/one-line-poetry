@@ -112,7 +112,7 @@
     li {
         display: inline-block;
         margin: 0 2px; 
-        font-size: 90%;
+        @include font-size(1);
     } 
 }
 .more-tab {
@@ -225,6 +225,10 @@
 .page-content {
     max-width: 1000px;
     margin: 50px auto; 
+
+    @include media("<=tablet") {
+        margin: 0 auto;
+    }
     // text-align: center;
 
     // header {

@@ -1,0 +1,14 @@
+{{ if or (eq .URL "/poetry/") (eq .URL "/tags/") (eq .Section "tags" )}}archive {{ end }} 
+{{ if and (eq .Type "page") ( not .IsHome )}}page{{end}} 
+
+{{if .IsHome }}
+    {{ with (index (where .Data.Pages "Type" "poetry") 0) }}
+        {{ if isset .Params "theme" }}
+            {{ index .Params.theme }}
+        {{ end }}
+    {{ end }}
+{{ else }}
+    {{ if isset .Params "theme" }}
+        {{ index .Params.theme }}
+    {{ end }}
+{{end}}

@@ -36,10 +36,10 @@ $(document).ready(function () {
 
 
 	function menu() {
-		$(".header-wrapper").delay(2000).queue(function () {
+		$(".header-wrapper").delay(8000).queue(function () {
 			$(this).removeClass("show")
 		});
-		$(".more-tab").delay(2000).queue(function () {
+		$(".more-tab").delay(8000).queue(function () {
 			$(this).addClass("show")
 		});
 		$(".site-header").on({

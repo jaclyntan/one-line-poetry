@@ -13,7 +13,7 @@ $(document).ready(function() {
             value: 1,
             random: true, 
             anim: { enable: true, speed: 1, opacity_min: 0, sync: false }
-          }, 
+          },
           size: {
             value: 12,
             random: true,

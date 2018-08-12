@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="description" content="one line poetry, one page at a time">
-    <meta name="keywords" content="poetry,digital,design,graphic design,type,art,illustration,lettering,perth designer, {{ delimit .Keywords ", " }}">
+    <meta name="keywords" content="one line poetry, one sentence poetry,poetry,digital,design,poetry page,graphic design,type,art,illustration,lettering,perth designer, {{ delimit .Keywords ", " }}">
     <meta name="author" content="Jaclyn Tan">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="google-site-verification" content="XlZNpr71HOt5haO30K1pDwIF5d3FdInuTyFF1Flvv4o" />
@@ -18,7 +18,7 @@
       <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     {{ end }}
   </head> 
-  <body class="{{ if or (eq .URL "/poetry/") (eq .URL "/tags/") (eq .Section "tags" )}}archive {{ end }} {{ if isset .Params "theme" }}{{ if eq .Type "page" }}page{{end}} {{ index .Params "theme" }}{{end}}">
+  <body class="{{ partial "bodyclasses" . }}">
   
     {{ block "header" . }}{{ partial "header" . }}{{end}} 
 
@@ -31,11 +31,11 @@
     {{ if .IsHome }}
       {{ with (index (where .Data.Pages "Type" "poetry") 0) }}
         {{ if isset .Params "js" }}
-        {{ range .Params.js }}
+            {{ range .Params.js }}
             <script src="{{ .  | safeJS }}"></script>
             {{ end }}
         {{ end }}
-      {{ end }}
+      {{ end }} 
     {{ else }}  
       {{ if isset .Params "js" }}
         {{ range .Params.js }}
@@ -45,7 +45,7 @@
     {{ end }}
             <script src="js/app.js"></script>
 
-            
+
     {{ if eq .URL "/admin/" }}
       <script src="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.js"></script>
       <script>

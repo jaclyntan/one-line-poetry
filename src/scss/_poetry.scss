@@ -67,3 +67,29 @@
         }
     }
 }
+
+#poetry-weeds {
+    background-image: url('/images/uploads/weeds.jpg');
+    background-size:cover;
+    background-repeat: repeat;
+    height: 100vh;
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+    .text {
+        @include font-size(4);
+        font-family: fertigo-script;
+        text-align:center;
+        text-transform: none;
+        letter-spacing: 0;
+        color: #ffcfc0;
+        line-height: 1;
+        padding: 100px;
+        mix-blend-mode: hard-light;
+
+        @include media("<=tablet") {
+            padding: 50px;
+            @include font-size(3);
+        }
+    }
+}
