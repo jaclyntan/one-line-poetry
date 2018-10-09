@@ -6,7 +6,7 @@ layout = "single"
 tags = [""]
 theme = "light"
 thumbnail = "/images/uploads/weeds.jpg"
-title = ""
+title = "Weeds"
 type = "poetry"
 typekit="https://use.typekit.net/esu2hiu.css"
 

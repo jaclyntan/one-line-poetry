@@ -93,3 +93,121 @@
         }
     }
 }
+
+#poetry-genius {
+    // background-color: black;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScvPgogIDxwYXRoIGQ9J00tMSwxIGwyLC0yCiAgICAgICAgICAgTTAsMTAgbDEwLC0xMAogICAgICAgICAgIE05LDExIGwyLC0yJyBzdHJva2U9J2JsYWNrJyBzdHJva2Utd2lkdGg9JzInLz4KPC9zdmc+"); 
+    background-repeat: repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    #Layer_1 {
+        fill:url(#circles);
+        height: 70vh;
+        width: auto;
+        // animation: stretch 10s linear infinite;
+        // mix-blend-mode: multiply;
+    }
+    #circles {
+        x:20;
+        y:100;
+    }
+}
+
+@keyframes stretch {
+    0% {transform:scale(1)}
+    25% {transform:scale(1.2, 1)}
+    50% {transform:scaleY(1)}
+    75% {transform:scale(1,1.2)}
+    100% {transform:scaleX(1)}
+}
+
+#poetry-matter {
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    transition: .5s ease background-color;
+    padding: 20px;
+    // overflow: hidden;
+    // position: relative;
+    .matter{
+        position: relative;
+        z-index: 10;
+        width: 100%; 
+        max-width: 900px;
+        height: auto;
+    }
+    .inner {
+        text-align: center;
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: center;
+        width: 70%;
+        margin: auto;
+
+        @include media("<=tablet") {
+            width: 100%;
+        }
+    }
+
+    .shape {
+        margin: 10px;
+        transition: 1s ease all;
+        fill: white;
+        max-width: 100%;
+
+        &.bob {
+            animation: bob 3s linear infinite;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+        }
+
+    }
+
+    .blobby {
+        width:80vw;
+        height: 80vh;
+        @include center;
+    }
+
+}
+
+@keyframes bob {
+    0% {transform:translateY(0)}
+    60% {transform:translateY(15px)}
+    100% {transform:translateY(0)}
+}
+
+#poetry-sigh {
+    background-color:rgb(44, 31, 65);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include font-size(6);
+
+    .sigh {
+        transition: 1s ease all;
+        animation: sigh 10s linear infinite;
+        font-family: serif;
+        text-transform: none;
+        letter-spacing: -.1em;
+    }
+    
+}
+
+:root {
+    --sighscale: 1.5;
+}
+@keyframes sigh {
+    0% {transform:scale(1) skew(0deg);font-size:100%;letter-spacing: -.1em;}
+    15% {transform:scale(var(--sighscale)) skew(-18deg);letter-spacing: .1em; }
+    28% {transform:scale(1) skew(0deg);letter-spacing: -.1em;}
+}
+

@@ -23,7 +23,7 @@ $(document).ready(function () {
 
 	$.getJSON("index.json", function (json) {
 		var items = json.poetry;
-		console.log(items[0]);
+		// console.log(items[0]);
 		shuffle(items);
 		// console.log(items[0].url);
 		var randlink = items[0].url;

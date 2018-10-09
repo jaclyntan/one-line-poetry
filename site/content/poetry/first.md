@@ -12,4 +12,4 @@ theme = "dark"
 
 <div id="poetry-first" class="wrapper">
 <span style="mix-blend-mode:soft-light;color:black;">But first,</span> <em style="font-size:12rem;font-family:Times;margin-left:10px;mix-blend-mode: overlay;">love</em>
-</div> 
+</div>
